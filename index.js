@@ -4,6 +4,7 @@ var start = null;
 
 var response = undefined
 var candidatesData = []
+var pct = 0
 let lulaName = "LULA"
 let bozoName = "JAIR BOLSONARO"
 
@@ -32,7 +33,7 @@ function loadList(){
                          candidatesData.push(candidate)
                  
                      });
-
+    pct = response.pst
     updateScreen();
 
 }
@@ -45,12 +46,17 @@ function updateScreen(){
 
     candidatesData.forEach(cData => {
         var tag = document.createElement("p");
-        var text = document.createTextNode(cData.name + " --> " + cData.percent);
+        var text = document.createTextNode(cData.name + " --> " + cData.percent + "%");
         tag.appendChild(text);
        
         div.appendChild(tag);
         console.log(cData)
     });
+
+    var tag = document.createElement("p");
+    var node = document.createTextNode("Total de urnas apuradas: " + pct+ "%");
+    tag.appendChild(node);
+    div.appendChild(tag);
 }
 
 function step(timestamp) {
