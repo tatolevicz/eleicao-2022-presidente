@@ -8,7 +8,7 @@ var pct = 0
 let lulaName = "LULA"
 let bozoName = "JAIR BOLSONARO"
 
-
+//test para push no cloud flare
 
 function doGetRequest(url) {
     var xmlhttp = new XMLHttpRequest()
